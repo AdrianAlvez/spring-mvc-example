@@ -1,4 +1,4 @@
-package com.formacion.nttdata;
+package com.formacion.nttdata.hello.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -10,14 +10,13 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller
+import com.formacion.nttdata.hello.model.User;
 
+@Controller
 public class HomeController {
 
-	/**
-	 * 
+	/** 
 	 * Simply selects the home view to render by returning its name.
-	 * 
 	 */
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
