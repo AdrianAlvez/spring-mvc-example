@@ -1,3 +1,4 @@
 com\formacion\nttdata\hello\model\User.class
 com\formacion\nttdata\hello\service\HomeService.class
+com\formacion\nttdata\util\MyBatisUtil.class
 com\formacion\nttdata\hello\controller\HomeController.class
