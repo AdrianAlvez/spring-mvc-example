@@ -21,3 +21,4 @@ public class MyBatisUtil {
 		return sqlSessionFactory;
 	}
 }
+

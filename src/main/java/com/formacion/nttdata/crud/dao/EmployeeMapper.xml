@@ -19,12 +19,12 @@
 	</select>
 	
 	<insert id="insertEmployee" parameterType="employee">
-		INSERT INTO employee(fullname, email, gender, hobbies, country, address)
-		VALUES(#{fullname}, #{email}, #{gender}, #{hobbies}, #{country}, #{address})
+		INSERT INTO employee(fullname, email, gender, hobbies, country, address, edition)
+		VALUES(#{fullname}, #{email}, #{gender}, #{hobbies}, #{country}, #{address}, #{edition})
 	</insert>
 	
 	<update id="updateEmployee" parameterType="employee">
-		UPDATE employee SET fullname = #{fullname}, email = #{email}, gender = #{gender}, hobbies = #{hobbies}, country = #{country}, address = #{address} 
+		UPDATE employee SET fullname = #{fullname}, email = #{email}, gender = #{gender}, hobbies = #{hobbies}, country = #{country}, address = #{address}, edition = #{edition} 
 		WHERE id = #{id} 
 	</update>
 	

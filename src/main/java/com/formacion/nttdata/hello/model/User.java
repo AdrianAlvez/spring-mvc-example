@@ -1,5 +1,6 @@
 package com.formacion.nttdata.hello.model;
 
+
 public class User {
 	String userName;
 	String userSurname;
@@ -17,6 +18,4 @@ public class User {
 		this.userSurname = userSurname;
 	}
 	
-	
-
 }

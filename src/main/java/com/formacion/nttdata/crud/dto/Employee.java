@@ -9,6 +9,7 @@ public class Employee {
 	private String hobbies;
 	private String country;
 	private String address;
+	private String edition;
 
 	public Integer getId() {
 		return id;
@@ -66,4 +67,13 @@ public class Employee {
 		this.country = country;
 	}
 
+	public String getEdition() {
+		return edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+	}
+
+	
 }

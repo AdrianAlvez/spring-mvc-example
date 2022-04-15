@@ -29,6 +29,7 @@
 					<th>Hobbies</th>
 					<th>Country</th>
 					<th>Address</th>
+					<th>Edition Date</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -48,6 +49,7 @@
 						<td>${e.hobbies}</td>
 						<td>${e.country}</td>
 						<td>${e.address}</td>
+						<td>${e.edition}</td>
 						<td><a href="${updateLink}">Update</a> | <a
 							href="${deleteLink}"
 							onclick="if(!(confirm('Are you sure want to delete this Employee permanently?'))) return false">Delete</a>

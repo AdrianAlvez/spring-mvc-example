@@ -20,17 +20,18 @@
 			<s:hidden path="" value="${employee.hobbies}" id="hobbies" />
 
 			<div class="form-group">
-				<s:input path="fullname" class="form-control"
-					placeholder="Enter Full Name" />
+				<s:input path="fullname" class="form-control" placeholder="Enter Full Name" />
+				${messageErrorFullName}
 			</div>
 
 			<div class="form-group">
 				<s:input path="email" placeholder="Enter Email" class="form-control" />
+				${messageErrorEmail}
 			</div>
 
 			<div class="form-group">
 				<div class="form-check-inline">
-					<label class="form-check-label"> <s:radiobutton
+					<label class="form-check-label"> <s:radiobutton 
 							path="gender" value="Male" class="form-check-input" />Male
 					</label>
 				</div>

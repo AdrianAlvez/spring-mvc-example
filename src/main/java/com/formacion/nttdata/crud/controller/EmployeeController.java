@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.formacion.nttdata.crud.dao.EmployeeMapper;
 import com.formacion.nttdata.crud.dto.Employee;
+import com.formacion.nttdata.crud.service.EditionDate;
+import com.formacion.nttdata.crud.service.ValidationService;
 
 @Controller
 @RequestMapping("/employee")
@@ -16,6 +18,12 @@ public class EmployeeController {
 
 	@Autowired
 	EmployeeMapper employeeMapper;
+	
+	@Autowired
+	EditionDate editionDate;
+	
+	@Autowired
+	ValidationService validationService;
 
 	private static final String EMPLOYEE = "Employee";
 	private static final String EMPLOYEELIST = "ListEmployees";
@@ -33,10 +41,26 @@ public class EmployeeController {
 	}
 
 	@RequestMapping("/saveProcess")
-	public String saveEmployee(@ModelAttribute("employee") Employee employee) {
+
+	public String saveEmployee(@ModelAttribute("employee") Employee employee, Model model) {
+		
+		if(!validationService.validationFullName(employee.getFullname())) {
+			model.addAttribute("messageErrorFullName", "Campo fullName vacio o formato erroneo");
+			return EMPLOYEE;
+		}
+		
+		if(!validationService.validationEmail(employee.getEmail())) {
+			model.addAttribute("messageErrorEmail", "Campo email vacio o formato erroneo");
+			return EMPLOYEE;
+		} 
+		
+		
+
 		if (employee.getId() == null) {
+			employee.setEdition(editionDate.fechaActual());
 			employeeMapper.saveEmployee(employee);
 		} else {
+			employee.setEdition(editionDate.fechaActual());
 			employeeMapper.updateEmployee(employee);
 		}
 
