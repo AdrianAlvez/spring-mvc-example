@@ -45,17 +45,17 @@ public class EmployeeController {
 	public String saveEmployee(@ModelAttribute("employee") Employee employee, Model model) {
 		
 		if(!validationService.validationFullName(employee.getFullname())) {
-			model.addAttribute("messageErrorFullName", "Campo Full Name vacio o formato erroneo");
+			model.addAttribute("messageErrorFullName", "Campo Full Name vacio o formato erroneo. Por favor introduzca su Nombre y apellidos.");
 			return EMPLOYEE;
 		}
 		
 		if(!validationService.validationEmail(employee.getEmail())) {
-			model.addAttribute("messageErrorEmail", "Campo email vacio o formato erroneo");
+			model.addAttribute("messageErrorEmail", "Campo email vacio o formato erroneo. Por favor introduzca un email valido.");
 			return EMPLOYEE;
 		} 
 		
 		if(employee.getHobbies() == null){
-			employee.setHobbies("Ningún hobbie seleccionado");
+			employee.setHobbies("Ningún hobbie seleccionado.");
 		}
 		
 	
