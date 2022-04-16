@@ -45,7 +45,7 @@ public class EmployeeController {
 	public String saveEmployee(@ModelAttribute("employee") Employee employee, Model model) {
 		
 		if(!validationService.validationFullName(employee.getFullname())) {
-			model.addAttribute("messageErrorFullName", "Campo fullName vacio o formato erroneo");
+			model.addAttribute("messageErrorFullName", "Campo Full Name vacio o formato erroneo");
 			return EMPLOYEE;
 		}
 		
@@ -54,8 +54,11 @@ public class EmployeeController {
 			return EMPLOYEE;
 		} 
 		
+		if(employee.getHobbies() == null){
+			employee.setHobbies("Ningún hobbie seleccionado");
+		}
 		
-
+	
 		if (employee.getId() == null) {
 			employee.setEdition(editionDate.fechaActual());
 			employeeMapper.saveEmployee(employee);

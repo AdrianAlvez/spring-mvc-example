@@ -45,7 +45,7 @@
 
 			<div class="form-group">
 				<div class="form-check-inline">
-					<label class="form-check-label"> <s:checkbox path="hobbies"
+					<label class="form-check-label"> <s:checkbox path="hobbies" 
 							value="Sports" class="form-check-input" />Sports
 					</label>
 				</div>

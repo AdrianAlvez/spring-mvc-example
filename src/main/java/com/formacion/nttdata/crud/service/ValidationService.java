@@ -5,6 +5,8 @@ import java.util.regex.Pattern;
 
 import org.springframework.stereotype.Service;
 
+import com.formacion.nttdata.crud.dto.Employee;
+
 @Service
 public class ValidationService {
 
@@ -38,5 +40,11 @@ public class ValidationService {
         }
 
 		
+	}
+	
+	public void extracted(Employee employee) {
+		if(employee.getHobbies() == null){
+			employee.setHobbies("Ningun hobbie seleccionado");
+		}
 	}
 }
